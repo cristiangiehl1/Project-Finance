@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<div class="greet" style="text-align: left; font-size: 20px">
+    <p> Welcome <strong>{{ name }}</strong> to your homepage.</p>
+</div>
+<h1>Wallet</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price (US$)</th>
+            <th>TOTAL (US$)</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in purchases %}
+    {% set price = row["price"] %}
+    {% set total = row["total"] %}
+            <tr>
+                <td>{{ row["stock"] }}</td>
+                <td>{{ row["shares"] }}</td>
+                <td>{{ price | usd }}</td>
+                <td>{{ total | usd }}</td>
+            </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><strong>Total:</strong></td>
+            <td></td>
+            <td></td>
+            <td>
+                {{ total_stocks_value | usd }}
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<h1>Cash balance</h1>
+<div id="cash_balance">
+    <div class="cash_balance_txt">
+        <p class="header_cash_balance">Cash (US$)</p>
+        <p>{{ cash | usd }}</p>
+    </div>
+    <div class="cash_balance_txt">
+        <p class="header_cash_balance">Stock's Value (US$)</p>
+        <p>{{ total_stocks_value | usd }} </p>
+    </div>
+    <div class="cash_balance_txt">
+        <p class="header_cash_balance">Cash Balance (US$)</p>
+        <p> {{ cash_balance | usd }} </p>
+    </div>
+    <div class="cash_balance_txt">
+        <p class="header_cash_balance">Profit/Loss (US$)</p>
+        <p>{{ profit_loss | usd }} </p>
+    </div>
+</div>
+{% endblock %}

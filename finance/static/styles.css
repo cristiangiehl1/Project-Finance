@@ -1,0 +1,101 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+.nav-link
+{
+    border-radius: 10px;
+    margin-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    transition: background-color .5s;
+
+}
+
+.nav-link:hover
+{
+    background-color: #b3b4b5;
+}
+
+table
+{
+    transition: .3s;
+}
+
+table:hover
+{
+    transform: scale(1.02);
+}
+
+thead {
+    background-color: #537FBE;
+    color: white;
+    border-top: 2px solid black;
+}
+
+tbody > tr:nth-child(odd)
+{
+    background-color: #f2f2f2;
+}
+
+tfoot
+{
+    background-color: #537FBE;
+    color: white;
+    font-weight: bolder;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#cash_balance
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.cash_balance_txt
+{
+    font-size: 18px;
+
+    border: 2px solid green;
+    margin-left: 10px;
+    width: 100%;
+
+    transition: .3s;
+}
+
+.cash_balance_txt:hover
+{
+    transform: scale(1.02);
+}
+
+.header_cash_balance
+{
+    font-weight: bolder;
+}
